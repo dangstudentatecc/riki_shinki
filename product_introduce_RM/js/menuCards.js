@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { flag: "standard", name: "キムチ盛り合わせ", img: "./img/menu/kimuchi.webp" },
     { flag: "standard", name: "枝豆" },
     { flag: "standard", name: "きゅうり" },
-    { flag: "standard", name: "韓国のり" },
+    { flag: "standard", name: "韓国のり", img: "./img/menu/nori.webp" },
     { flag: "standard", name: "味付け煮卵" },
     { flag: "standard", name: "麻辣メンマ" },
     { flag: "standard", name: "自家製チャンヂャ" },
