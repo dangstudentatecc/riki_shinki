@@ -103,10 +103,10 @@
     cursor: pointer;
 }
 
-.menuCard:hover {
+/* .menuCard:hover {
     transform: translateY(-6px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-}
+} */
 
 .image {
     aspect-ratio: 1 / 1;
@@ -129,7 +129,7 @@
 }
 
 .menuCard:hover .image img {
-    transform: scale(1.08);
+    transform: scale(1.1);
 }
 
 .menuDivider {
@@ -177,4 +177,17 @@
 /* ---------- Ẩn hoàn toàn ---------- */
 .hidden-card {
     display: none !important;
+}
+
+
+/*pop up content, noi dung hinh anh khi click vao*/
+.imgpop-content {
+    margin-top: 12px;
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    padding: 8px 16px;
+    background: #d05555;
+    box-shadow: 4px 3px 18px 4px #3a3535e0;
 }

@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
     { flag: "premium", name: "ロースステーキ", img: "./img/menu/rosu_suteki.webp" },
     { flag: "premium", name: "名物4種盛り", img: "./img/menu/4shumori_suteki.webp" },
     { flag: "premium", name: "力丸漬けハラミステーキ", img: "./img/menu/zuke_harami.webp" },
-    { flag: "premium", name: "漬けロースステーキ", img: "./img/menu/zuke_rosu.webp"},
     { flag: "premium", name: "巻き野菜", img: "./img/menu/makiyasai.webp" },
     { flag: "premium", name: "辛い！冷麵", img: "./img/menu/karai_reimen.webp" },
 
@@ -77,13 +76,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   data.forEach(item => {
     const cardHTML = `
-      <div class="menuCard" data-flag="${item.flag}">
+      <li class="menuCard" data-flag="${item.flag}">
         <div class="image">
           <img src="${item.img || './img/header_logo.png'}" alt="${item.name}">
         </div>
         <div class="menuDivider"></div>
         <div class="menuName">${item.name}</div>
-      </div>
+      </li>
     `;
     if (item.flag === "wagyu") wagyuContainer.insertAdjacentHTML("beforeend", cardHTML);
     else if (item.flag === "premium") premiumContainer.insertAdjacentHTML("beforeend", cardHTML);

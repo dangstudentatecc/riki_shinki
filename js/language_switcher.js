@@ -10,7 +10,7 @@ async function loadTranslations() {
 
     // Gắn key gốc (JP) cho các phần tử cần dịch nếu chưa có
     const targets = document.querySelectorAll(
-      '.menuName, .drinkName, .note, .attention-box, .attentionTitle, .agree-area label, .pressable-btn .text, .btn-wrapper .menu-btn, .main-btn'
+      '.menuName, .drinkName, .note, .attention-box, .attentionTitle, .agree-area label, .pressable-btn .text, .btn-wrapper .menu-btn, .main-btn, .imgpop-overlay .imgpop-content'
     );
 
     targets.forEach(el => {
@@ -28,7 +28,7 @@ async function loadTranslations() {
 // Hàm áp dụng dịch
 function applyTranslations(lang) {
   const targets = document.querySelectorAll(
-    '.menuName, .drinkName, .note, .attention-box, .attentionTitle, .agree-area label, .pressable-btn .text, .btn-wrapper .menu-btn, .main-btn'
+    '.menuName, .drinkName, .note, .attention-box, .attentionTitle, .agree-area label, .pressable-btn .text, .btn-wrapper .menu-btn, .main-btn, .imgpop-overlay .imgpop-content'
   );
 
   targets.forEach(el => {
