@@ -80,7 +80,6 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="image">
           <img src="${item.img || './img/header_logo.png'}" alt="${item.name}">
         </div>
-        <div class="menuDivider"></div>
         <div class="menuName">${item.name}</div>
       </li>
     `;

@@ -148,13 +148,13 @@
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 } */
 
-.drinkDivider {
+/* .drinkDivider {
     width: 120%;
     border-top: 5px solid #7B542F;
     position: absolute;
     top: 87%;
     left: 0;
-}
+} */
 
 .drinkName {
     position: absolute;
@@ -163,6 +163,8 @@
     font-size: 20px;
     color: #ffffff;
     font-weight: 700;
+    background-color: #fa4e4e;
+    z-index: 5;
 }
 
 .image {
@@ -172,7 +174,7 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    background-color: #FFCF71;
+    /* background-color: #FFCF71; */
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
 }
