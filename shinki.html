@@ -4,8 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>メニュー見込み</title>
+  <title>焼き肉メニュー</title>
   <link rel="stylesheet" href="./css/language_droplist.css">
+
   <link rel="stylesheet" href="./css/menu.css">
   <link rel="stylesheet" href="./css/drink_menu.css">
   <link rel="stylesheet" href="./css/attention.css">
@@ -16,6 +17,13 @@
   <header>
     <div class="header-left">
       <img src="./img/header_logo.png" alt="Logo" class="logo">
+    </div>
+    <div class="navbar">
+      <ul>
+        <li><a href="#menuSection">メニュー</a></li>
+        <li><a href="#drinkSection">ドリンク</a></li>
+        <li><a href="#attentionSection">注意事項</a></li>
+      </ul>
     </div>
 
     <div class="header-right">
@@ -54,16 +62,7 @@
     </div>
   </header>
 
-  <nav class="navbar">
-    <ul>
-      <li><a href="#menuSection">メニュー</a></li>
-      <li><a href="#drinkSection">ドリンク</a></li>
-      <li><a href="#attentionSection">注意事項</a></li>
-    </ul>
-  </nav>
-
   <main>
-
     <section id="menuSection">
       <div class="button-group">
         <div class="btn-wrapper">
@@ -146,12 +145,14 @@
     <section id="attentionSection">
       <div class="attention-container">
         <h2 class="attentionTitle">ご利用前にご確認ください</h2>
-
-        <div class="attention-box">食べ飲み残しをした場合は追加料金が発生になります。</div>
-        <div class="attention-box">お席の時間を過ぎた場合は、追加料金をいただきます。</div>
-        <div class="attention-box">飲み放題のお客様は、一度にお一人様一杯までです。</div>
-        <div class="attention-box">９０分のコースは、オーダー時間６５分となります。１２０分のコースは、オーダー時間９０分となります。</div>
-
+        
+          <div class="attention-box">食べ飲み残しをした場合は追加料金が発生になります。</div>
+          <div class="attention-box">お席の時間を過ぎた場合は、追加料金をいただきます。</div>
+          <div class="attention-box">飲み放題のお客様は、一度にお一人様一杯までです。</div>
+          <div class="attention-box">９０分のコースは、オーダー時間６５分となります。１２０分のコースは、オーダー時間９０分となります。</div>
+          <div class="attention-box">同一グループのお客様は同じコースでお願いいたします。</div>
+          <div class="attention-box">３～５歳のお子様は７７０円、６～１１歳のお子様は半額でございます。</div>
+      
         <div class="agree-area">
           <input type="checkbox" id="attentionCheckbox">
           <label for="attentionCheckbox">すべて同意します。</label>

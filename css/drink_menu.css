@@ -62,11 +62,11 @@
 }
 
 /* ---------- 飲み放題 (cũ) ---------- */
-.button-group {
-    display: flex;
+#drinkSection .button-group {
+    /* display: flex; */
     flex-direction: row;
-    align-items: center;
     margin-bottom: 40px;
+    justify-content: center;
 }
 
 .note {
@@ -88,7 +88,7 @@
     align-items: center;
 }
 
-.menu-btn {
+#drinkSection .menu-btn {
     background-color: #9E1C60;
     color: #ffffff;
     border: rgba(192, 57, 43, 0.6);
@@ -102,7 +102,7 @@
     margin: 5px;
 }
 
-.menu-btn:hover {
+#drinkSection .menu-btn:hover {
     transform: translateY(-3px);
     background-color: #561530;
 }
@@ -167,7 +167,7 @@
     z-index: 5;
 }
 
-.image {
+#drinkSection .image {
     aspect-ratio: 1 / 1;
     width: 100%;
     display: flex;
@@ -179,7 +179,7 @@
     border-top-right-radius: 20px;
 }
 
-.image img {
+#drinkSection .image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -187,7 +187,7 @@
     transition: transform 0.4s ease;
 }
 
-.drinkCard:hover .image img {
+#drinkSection .drinkCard:hover .image img {
     transform: scale(1.08);
 }
 

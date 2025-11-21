@@ -4,12 +4,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const standardContainer = document.getElementById("standard-group");
   const data = [
     { flag: "wagyu", name: "和牛ロース", img: "./img/menu/wagyu_rosu.webp" },
-    { flag: "wagyu", name: "和牛カルビ" },
+    { flag: "wagyu", name: "和牛カルビ", img: "./img/menu/wagyu_karubi.webp" },
     { flag: "wagyu", name: "和牛モモロース", img: "./img/menu/wagyu_momo.webp" },
-    { flag: "wagyu", name: "本日の和牛" },
+    { flag: "wagyu", name: "本日の和牛", img: "./img/menu/wagyu_honjitu.webp" },
     { flag: "wagyu", name: "和牛しゃぶ", img: "./img/menu/wagyu_shabu.webp" },
     { flag: "wagyu", name: "タンステーキ", img: "./img/menu/tan_suteki.webp" },
-    { flag: "wagyu", name: "力丸タン" },
+    { flag: "wagyu", name: "力丸タン", img: "./img/menu/usui_tan.webp" },
     { flag: "wagyu", name: "厚切りタン", img: "./img/menu/atuikiri_tan.webp" },
     { flag: "wagyu", name: "ホタテ", img: "./img/menu/hotate.webp" },
     { flag: "wagyu", name: "イカ" },
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { flag: "premium", name: "牛タン", img: "./img/menu/gyutan.webp" },
     { flag: "premium", name: "ミノ" },
     { flag: "premium", name: "厚切りステーキ" },
-    { flag: "premium", name: "ハラミの串焼きステーキ" },
+    { flag: "premium", name: "ハラミの串焼きステーキ", img: "./img/menu/harami_suteki.webp" },
     { flag: "premium", name: "中落カルビ一本焼き" },
     { flag: "premium", name: "ロースステーキ", img: "./img/menu/rosu_suteki.webp" },
     { flag: "premium", name: "名物4種盛り", img: "./img/menu/4shumori_suteki.webp" },
@@ -36,8 +36,8 @@ document.addEventListener("DOMContentLoaded", function () {
     { flag: "standard", name: "豚タン", img: "./img/menu/butatan.webp" },
     { flag: "standard", name: "レバー" },
     { flag: "standard", name: "タン軟骨" },
-    { flag: "standard", name: "テッチャン", img: "./img/menu/tecchan.webp"　},
-    { flag: "standard", name: "アカセン" },
+    { flag: "standard", name: "テッチャン", img: "./img/menu/tecchan.webp" },
+    { flag: "standard", name: "アカセン", img: "./img/menu/akasen.webp" },
     { flag: "standard", name: "上カルビ", img: "./img/menu/karubi.webp" },
     { flag: "standard", name: "上ハラミ", img: "./img/menu/harami.webp" },
     { flag: "standard", name: "上ロース", img: "./img/menu/rosu.webp" },
@@ -45,15 +45,15 @@ document.addEventListener("DOMContentLoaded", function () {
     { flag: "standard", name: "ナムル盛り合わせ" },
     { flag: "standard", name: "キムチ盛り合わせ", img: "./img/menu/kimuchi.webp" },
     { flag: "standard", name: "枝豆", img: "./img/menu/edamame.webp" },
-    { flag: "standard", name: "きゅうり" },
+    { flag: "standard", name: "きゅうり", img: "./img/menu/kyuuri.webp" },
     { flag: "standard", name: "韓国のり", img: "./img/menu/nori.webp" },
     { flag: "standard", name: "味付け煮卵", img: "./img/menu/nizuke_tamago.webp" },
     { flag: "standard", name: "麻辣メンマ" },
     { flag: "standard", name: "自家製チャンヂャ" },
     { flag: "standard", name: "韓国のりのチョレギサラダ", img: "./img/menu/choregi.webp" },
-    { flag: "standard", name: "全力！ネギ推しサラダ" },
+    { flag: "standard", name: "全力！ネギ推しサラダ", img: "./img/menu/negi_sarada.webp" },
     { flag: "standard", name: "ニラチヂミ", img: "./img/menu/nirachizimi.webp" },
-    { flag: "standard", name: "マンドゥ" },
+    { flag: "standard", name: "マンドゥ", img: "./img/menu/mandu.webp" },
     { flag: "standard", name: "唐揚げ", img: "./img/menu/karaage1.webp" },
     { flag: "standard", name: "手羽先唐揚げ", img: "./img/menu/tebasakiage.webp" },
     { flag: "standard", name: "ヤンニョムチキン" },
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { flag: "standard", name: "シャキシャキワサビ" },
     { flag: "standard", name: "ニンニクスライス", img: "./img/menu/ninniku_tougarashi.webp"},
     { flag: "standard", name: "刻み唐辛子", img: "./img/menu/ninniku_tougarashi.webp" },
-    { flag: "standard", name: "焼き野菜" },
+    { flag: "standard", name: "焼き野菜", img: "./img/menu/yakiyasai.webp" },
     { flag: "standard", name: "ご飯", img: "./img/menu/gohan.webp" },
     { flag: "standard", name: "石焼ビビンバ", img: "./img/menu/ishibibinba.webp" },
     { flag: "standard", name: "冷麵", img: "./img/menu/reimen.webp" },
@@ -79,8 +79,9 @@ document.addEventListener("DOMContentLoaded", function () {
       <li class="menuCard" data-flag="${item.flag}">
         <div class="image">
           <img src="${item.img || './img/header_logo.png'}" alt="${item.name}">
+          <span class="menuName">${item.name}</span>
         </div>
-        <div class="menuName">${item.name}</div>
+        
       </li>
     `;
     if (item.flag === "wagyu") wagyuContainer.insertAdjacentHTML("beforeend", cardHTML);
