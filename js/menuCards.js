@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
     { flag: "standard", name: "サムジャン", img: "./img/menu/samuzan.webp" },
     { flag: "standard", name: "ネギ塩", img: "./img/menu/negishio.webp" },
     { flag: "standard", name: "シャキシャキワサビ" },
-    { flag: "standard", name: "ニンニクスライス", img: "./img/menu/ninniku_tougarashi.webp"},
+    { flag: "standard", name: "ニンニクスライス", img: "./img/menu/ninniku_tougarashi.webp" },
     { flag: "standard", name: "刻み唐辛子", img: "./img/menu/ninniku_tougarashi.webp" },
     { flag: "standard", name: "焼き野菜", img: "./img/menu/yakiyasai.webp" },
     { flag: "standard", name: "ご飯", img: "./img/menu/gohan.webp" },
@@ -79,9 +79,8 @@ document.addEventListener("DOMContentLoaded", function () {
       <li class="menuCard" data-flag="${item.flag}">
         <div class="image">
           <img src="${item.img || './img/header_logo.png'}" alt="${item.name}">
-          <span class="menuName">${item.name}</span>
         </div>
-        
+        <span class="menuName">${item.name}</span>
       </li>
     `;
     if (item.flag === "wagyu") wagyuContainer.insertAdjacentHTML("beforeend", cardHTML);
