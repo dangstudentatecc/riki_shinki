@@ -1,7 +1,7 @@
 body {
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     margin: 0;
-    background: #d90404;
+    /* background: #d90404; */
     color: #222;
 
     background-image: url("../img/charcoal.jpg");
@@ -74,8 +74,8 @@ header {
 .navbar li a {
     text-decoration: none;
     color: #ef4c4c;
-    font-weight: 700;
-    font-size: 18px;
+    font-weight: 850;
+    font-size: 25px;
     position: relative;
     transition: color 0.3s;
 }
