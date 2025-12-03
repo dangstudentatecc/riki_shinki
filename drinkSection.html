@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1280">
+    <title>焼き肉メニュー</title>
+    <link rel="stylesheet" href="./css/language_droplist.css">
+
+    <!-- <link rel="stylesheet" href="./css/menu.css"> -->
+    <link rel="stylesheet" href="./css/drink_menu.css">
+    <!-- <link rel="stylesheet" href="./css/attention.css"> -->
+    <!-- <link rel="stylesheet" href="./css/popup_Image.css"> -->
+</head>
+
+<body>
+    <header>
+        <div class="header-left">
+            <img src="./img/header_logo.png" alt="Logo" class="logo">
+        </div>
+        <div class="navbar">
+            <ul>
+                <li><a href="menuSection.html">メニュー</a></li>
+                <li><a href="drinkSection.html">ドリンク</a></li>
+                <li><a href="attentionSection.html">注意事項</a></li>
+            </ul>
+        </div>
+
+        <div class="header-right">
+            <div class="lang-selector" id="headerLangSelector">
+                <button id="headerCurrentLang" class="current-lang" aria-label="Language selection">
+                    <img src="./img/language_change.png" alt="global icon" class="flag-icon">
+                </button>
+
+                <div id="headerLangMenu" class="lang-menu lang-hidden">
+                    <button class="lang-option" data-lang="JP" data-flag="./img/flag/japan.png">
+                        <img src="./img/flag/japan.png" alt="日本" class="flag">
+                        <span>日本語</span>
+                    </button>
+                    <button class="lang-option" data-lang="KR" data-flag="./img/flag/korea.png">
+                        <img src="./img/flag/korea.png" alt="한국어" class="flag">
+                        <span>한국어</span>
+                    </button>
+                    <button class="lang-option" data-lang="EN" data-flag="./img/flag/theUK.png">
+                        <img src="./img/flag/theUK.png" alt="English" class="flag">
+                        <span>English</span>
+                    </button>
+                    <button class="lang-option" data-lang="TH" data-flag="./img/flag/thailand.png">
+                        <img src="./img/flag/thailand.png" alt="ภาษาไทย" class="flag">
+                        <span>ภาษาไทย</span>
+                    </button>
+                    <button class="lang-option" data-lang="TW" data-flag="./img/flag/taiwan.png">
+                        <img src="./img/flag/taiwan.png" alt="台灣" class="flag">
+                        <span>繁體中文</span>
+                    </button>
+                    <button class="lang-option" data-lang="CN" data-flag="./img/flag/china.png">
+                        <img src="./img/flag/china.png" alt="中文" class="flag">
+                        <span>中文</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="drinkSection">
+            <div class="note">※ワンドリンク制になります。</div>
+            <div class="drink-container">
+                <div class="main-button-group">
+                    <div id="drinkTanpinBtn" class="main-btn">単品</div>
+                    <div id="drinkNomihodaiBtn" class="main-btn">飲み放題</div>
+                </div>
+
+                <!-- 単品エリア -->
+                <div id="drinkTanpinArea" class="tanpin-area drink-hidden">
+                    <div class="tanpin-images">
+                        <img src="./img/pamphlet/drinkmenu1.png" alt="ドリンクメニュー1">
+                        <img src="./img/pamphlet/drinkmenu2.png" alt="ドリンクメニュー2">
+                    </div>
+                </div>
+
+                <!-- 飲み放題エリア -->
+                <div id="drinkNomihodaiArea" class="nomihodai-area drink-hidden">
+                    <div class="button-group">
+                        <div class="button-line">
+                            <div class="btn-wrapper"><button id="drinkSoft" class="menu-btn">ソフトドリンク飲み放題</button></div>
+                            <div class="btn-wrapper"><button id="drinkAlcohol" class="menu-btn">アルコール飲み放題</button></div>
+                        </div>
+                    </div>
+
+                    <div class="card-container">
+                        <div class="drinkCard" data-flag="soft">
+                            <div class="image"><img src="./img/softDrinkMachine1.jpg" alt="アイスドリンク"></div>
+                            <div class="drinkName">アイスドリンク</div>
+                        </div>
+
+                        <div class="drinkCard" data-flag="soft">
+                            <div class="image"><img src="./img/softDrinkMachine2.jpg" alt="ホットドリンク"></div>
+                            <div class="drinkName">アイスドリンク</div>
+                        </div>
+
+                        <div class="drinkCard" data-flag="soft">
+                            <div class="image"><img src="./img/softDrinkMachine3.jpg" alt="ホットドリンク"></div>
+                            <div class="drinkName">ホットドリンク</div>
+                        </div>
+
+                        <div class="drinkCard" data-flag="alcohol">
+                            <div class="image"><img src="./img/beer.jpg" alt="ビール"></div>
+                            <div class="drinkName">ビール</div>
+                        </div>
+
+                        <div class="drinkCard" data-flag="alcohol">
+                            <div class="image"><img src="./img/highball.jpg" alt="ハイボール"></div>
+                            <div class="drinkName">ハイボール</div>
+                        </div>
+
+                        <div class="drinkCard" data-flag="alcohol">
+                            <div class="image"><img src="./img/cocktail.jpg" alt="カクテル"></div>
+                            <div class="drinkName">カクテル</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+    <!-- <script src="./js/menuCards.js"></script> -->
+    <!-- <script src="./js/menu_new.js"></script> -->
+    <script src="./js/drink_menu.js"></script>
+    <!-- <script src="./js/attention.js"></script> -->
+
+    <!-- 言語変換セット関数 -->
+    <script type="module" src="./js/language_switcher.js"></script>
+    <script type="module" src="./js/language_droplist_function.js"></script>
+    <script src="./js/language_droplist.js"></script>
+    <script src="./js/popup_Image.js"></script>
+</body>
+
+</html>
