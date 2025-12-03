@@ -28,14 +28,14 @@ document.addEventListener("DOMContentLoaded", function () {
     { flag: "premium", name: "巻き野菜", img: "./img/menu/makiyasai.webp" },
     { flag: "premium", name: "辛い！冷麵", img: "./img/menu/karai_reimen.webp" },
 
-    { flag: "standard", name: "手羽先", img: "./img/menu/tebasaki.webp"},
-    { flag: "standard", name: "せせり" },
+    { flag: "standard", name: "手羽先", img: "./img/menu/tebasaki.webp" },
+    { flag: "standard", name: "せせり", img: "./img/menu/seseri.webp" },
     { flag: "standard", name: "鶏もも", img: "./img/menu/torimomo.webp" },
     { flag: "standard", name: "豚バラ", img: "./img/menu/butabara.webp" },
     { flag: "standard", name: "豚トロ", img: "./img/menu/tontoro.webp" },
     { flag: "standard", name: "豚タン", img: "./img/menu/butatan.webp" },
     { flag: "standard", name: "レバー", img: "./img/menu/reba.webp" },
-    { flag: "standard", name: "タン軟骨" },
+    { flag: "standard", name: "タン軟骨", img: "./img/menu/tannankotsu.webp" },
     { flag: "standard", name: "テッチャン", img: "./img/menu/tecchan.webp" },
     { flag: "standard", name: "アカセン", img: "./img/menu/akasen.webp" },
     { flag: "standard", name: "上カルビ", img: "./img/menu/karubi.webp" },
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const cardHTML = `
       <li class="menuCard" data-flag="${item.flag}">
         <div class="image">
-          <img src="${item.img || './img/header_logo.png'}" alt="${item.name}">
+          <img src="${item.img || './img/header_logo.png'}" alt="${item.name}" width="700" height="500">
         </div>
         <span class="menuName">${item.name}</span>
       </li>
@@ -87,4 +87,6 @@ document.addEventListener("DOMContentLoaded", function () {
     else if (item.flag === "premium") premiumContainer.insertAdjacentHTML("beforeend", cardHTML);
     else standardContainer.insertAdjacentHTML("beforeend", cardHTML);
   });
+
+
 });
