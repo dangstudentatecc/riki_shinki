@@ -1,62 +1,41 @@
 document.addEventListener("DOMContentLoaded", () => {
-  setTimeout(() => {
-    const menuCards = document.querySelectorAll("#menuSection .menuCard");
-    const btnWagyu = document.getElementById("btnWagyu");
-    const btnPremium = document.getElementById("btnPremium");
-    const btnStandard = document.getElementById("btnStandard");
-    const buttons = [btnWagyu, btnPremium, btnStandard];
+  const menuCards = document.querySelectorAll("#menuSection .menuCard");
+  const filterButtons = document.querySelectorAll(".button-group .btn-wrapper"); // Nên đặt class chung cho các nút
 
-    // --- Reset toàn bộ card về sáng ---
-    function resetGray() {
-      menuCards.forEach(menuCard => menuCard.classList.remove("gray"));
-    }
+  // Định nghĩa logic lọc bằng Object Mapping để tránh if/else rườm rà
+  const filterLogic = {
+    wagyu: (flag) => false, // Không cái nào bị xám
+    premium: (flag) => flag === "wagyu", // Xám nếu là wagyu
+    standard: (flag) => flag !== "standard", // Xám nếu không phải standard
+  };
 
-    // --- Làm xám tuỳ theo nhóm chọn ---
-    function showByGroup(group) {
-      resetGray();
+  function applyFilter(group) {
+    menuCards.forEach((card) => {
+      const flag = card.dataset.flag;
+      // Nếu có group (đang lọc), dùng logic mapping. Nếu không (reset), mặc định bỏ gray.
+      const shouldBeGray = group ? filterLogic[group](flag) : false;
+      card.classList.toggle("gray", shouldBeGray);
+    });
+  }
 
-      menuCards.forEach(menuCard => {
-        const flag = menuCard.dataset.flag;
+  function handleButtonClick(e) {
+    const clickedBtn = e.currentTarget;
+    const group = clickedBtn.dataset.group; // Dùng data-group ở HTML
+    const isActive = clickedBtn.classList.contains("active");
 
-        if (group === "wagyu") {
-          // wagyu → tất cả sáng
-        } else if (group === "premium" && flag === "wagyu") {
-          // premium → làm xám nhóm wagyu
-          menuCard.classList.add("gray");
-        } else if (group === "standard" && flag !== "standard") {
-          // standard → làm xám mọi nhóm khác
-          menuCard.classList.add("gray");
-        }
-      });
-    }
+    // 1. Reset trạng thái tất cả các nút
+    filterButtons.forEach((btn) => btn.classList.remove("active"));
 
-    // --- Toggle trạng thái nút ---
-    function toggleActiveButton(clickedBtn) {
-      const isActive = clickedBtn.classList.contains("active");
-
-      // Bỏ trạng thái active khỏi tất cả nút
-      buttons.forEach(btn => btn.classList.remove("active"));
-
-      if (isActive) {
-        // Nếu đang active → bấm lại sẽ tắt
-        resetGray();
-        return;
-      }
-
-      // Nếu chưa active → bật và lọc nhóm
+    // 2. Nếu nút vừa bấm đã active rồi -> Tắt lọc (Reset)
+    if (isActive) {
+      applyFilter(null);
+    } else {
+      // 3. Nếu chưa active -> Bật lọc
       clickedBtn.classList.add("active");
-
-      if (clickedBtn === btnWagyu) showByGroup("wagyu");
-      else if (clickedBtn === btnPremium) showByGroup("premium");
-      else if (clickedBtn === btnStandard) showByGroup("standard");
+      applyFilter(group);
     }
+  }
 
-    // --- Gán sự kiện click ---
-    btnWagyu.addEventListener("click", () => toggleActiveButton(btnWagyu));
-    btnPremium.addEventListener("click", () => toggleActiveButton(btnPremium));
-    btnStandard.addEventListener("click", () => toggleActiveButton(btnStandard));
-
-    // --- Trạng thái ban đầu: tất cả sáng ---
-    resetGray();
-  }, 100);
+  // Gán sự kiện tập trung
+  filterButtons.forEach((btn) => btn.addEventListener("click", handleButtonClick));
 });
