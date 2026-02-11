@@ -1,200 +1,318 @@
+/* ===============================
+   MENU SECTION
+================================ */
 #menuSection {
-    font-family: "Hiragino Kaku Gothic ProN", sans-serif;
-    /* background-color: #f8f8f8; */
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    /* min-height: 100vh; */
+  font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-
-/* ---------- BUTTONS ---------- */
+/* ===============================
+   BUTTON GROUP
+================================ */
 #menuSection .button-group {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
-    margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 50px;
 }
 
 #menuSection .menu-btn {
-    color: #fff;
-    border: none;
-    padding: 20px 60px;
-    border-radius: 15px;
-    font-size: 22px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.1s ease;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
-}
+  color: #fff;
+  border: none;
+  padding: 20px 60px;
+  border-radius: 15px;
+  font-size: 22px;
+  font-weight: 700;
+  cursor: pointer;
 
-.note {
-    font-size: 18px;
-    margin-bottom: 10px;
-    font-weight: 700;
+  /* FIX: không dùng transition: all */
+  transition:
+    transform 0.1s ease,
+    background-color 0.1s ease;
 }
 
 /* Default colors */
 #btnWagyu {
-    background-color: #222;
+  background-color: #222;
 }
 
 #btnPremium {
-    background-color: #c0392b;
+  background-color: #c0392b;
 }
 
 #btnStandard {
-    background-color: #015f28;
+  background-color: #015f28;
 }
 
-/* Hover effects */
+/* Hover */
 #btnWagyu:hover {
-    background-color: #000;
-    transform: translateY(-3px);
+  background-color: #000;
+  transform: translateY(-3px);
 }
 
 #btnPremium:hover {
-    background-color: #a5281d;
-    transform: translateY(-3px);
+  background-color: #a5281d;
+  transform: translateY(-3px);
 }
 
 #btnStandard:hover {
-    background-color: #014d20;
-    transform: translateY(-3px);
+  background-color: #014d20;
+  transform: translateY(-3px);
 }
 
-/* Active states */
+/* Active */
 #btnWagyu.active {
-    background-color: #000;
-    box-shadow: 0 0 18px rgba(0, 0, 0, 0.6);
-    transform: translateY(-3px) scale(1.05);
+  background-color: #000;
+  transform: translateY(-3px) scale(1.05);
 }
 
 #btnPremium.active {
-    background-color: #c0392b;
-    box-shadow: 0 0 18px rgba(192, 57, 43, 0.6);
-    transform: translateY(-3px) scale(1.05);
+  background-color: #c0392b;
+  transform: translateY(-3px) scale(1.05);
 }
 
 #btnStandard.active {
-    background-color: #015f28;
-    box-shadow: 0 0 18px rgba(39, 174, 96, 0.6);
-    transform: translateY(-3px) scale(1.05);
+  background-color: #015f28;
+  transform: translateY(-3px) scale(1.05);
 }
 
-/* ---------- CARD STYLE ---------- */
+/* ===============================
+   CARD GROUP
+================================ */
 .card-group {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-    max-width: 1500px;
-    margin-bottom: 50px; /* cách giữa các nhóm */
-  }
-
-.menuCard {
-    width: 120px;
-    height: 150px;
-    border-radius: 20px 20px 5px 5px;
-    color: #FFCF71;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    /* transition: transform 0.3s, opacity 0.3s, filter 0.3s; */
-    cursor: pointer;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  max-width: 1500px;
+  margin-bottom: 50px;
 }
 
-/* .menuCard:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-} */
+/* ===============================
+   MENU CARD (PERFORMANCE CORE)
+================================ */
+.menuCard {
+  width: 120px;
+  height: 150px;
+  border-radius: 20px 20px 5px 5px;
 
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  text-align: center;
+  color: #ffcf71;
+
+  /* FIX SCROLL */
+  content-visibility: auto;
+  contain-intrinsic-size: 120px 150px;
+
+  /* GPU stability */
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* ===============================
+   IMAGE AREA
+================================ */
 #menuSection .image {
-    aspect-ratio: 1 / 1;
-    width: 100%;
-    display: flex;
-    overflow: hidden;
-    background-color: #FFCF71;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+
+  background-color: #ffcf71;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 #menuSection .image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    aspect-ratio: 1 / 1;
-    /* transition: transform 0.1s ease; */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+
+  /* FIX: chỉ animate transform */
+  transition: transform 0.2s ease;
+
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
+/* Hover scale – nhẹ để giảm GPU load */
 #menuSection .menuCard:hover .image img {
-    transform: scale(1.1);
+  transform: scale(1.05);
 }
 
-/* .menuDivider {
-    width: 120%;
-    border-top: 5px solid #7B542F;
-    position: absolute;
-    top: 79%;
-    left: 0;
-} */
-
+/* ===============================
+   MENU NAME
+================================ */
 .menuName {
-    /* position: absolute; */
-    bottom: 1px;
-    width: 100%;
-    font-size: 18px;
-    color: #ffffff;
-    font-weight: 700;
-    white-space: nowrap;         /* Không xuống dòng */
-    overflow: hidden;            /* Ẩn phần bị tràn */
-    text-overflow: ellipsis;     /* Hiện dấu ... */
-    background-color: #fa4e4e;
-    z-index: 5;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  background-color: #fa4e4e;
+  z-index: 5;
+}
+
+/* ===============================
+   GRAY / DISABLED STATE
+   (FIX: bỏ filter – nguyên nhân lag)
+================================ */
+#menuSection .gray {
+  opacity: 0.6;
+  pointer-events: none;
+  
+}
+
+/* ===============================
+   SHADOW (GPU-FRIENDLY)
+================================ */
+.menuCard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.menuCard.active::after {
+  opacity: 1;
+}
+
+/* ===============================
+   HIDDEN CARD
+================================ */
+.hidden-card {
+  display: none !important;
+}
+
+/* ===============================
+   POPUP CONTENT
+================================ */
+.imgpop-content {
+  margin-top: 12px;
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+
+  padding: 8px 16px;
+  background: #d05555;
+
+  /* shadow nhẹ – không animate */
+  box-shadow: 4px 3px 18px 4px #3a3535e0;
+}
+#page-loading {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+body.loaded #page-loading {
+  display: none;
+}
+
+
+
+
+
+
+
+/* loading page */
+/* From Uiverse.io by lenin55 */ 
+/* //codelessly loader style */
+.ui-loader {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+}
+
+.loader-blk {
+  color: #3f51b5;
+  animation: rotate-outer08 1.4s linear infinite;
+}
+
+.multiColor-loader {
+  display: block;
+  animation: color-anim08 1.4s infinite;
+}
+
+.loader-circle {
+  stroke: currentColor;
+}
+
+.MuiCircularProgress-circleStatic {
+  transition: stroke-dashoffset 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+
+.loader-circle-animation {
+  animation: rotate-inner08 1.4s ease-in-out
+    infinite;
+  stroke-dasharray: 80px, 200px;
+  stroke-dashoffset: 0;
+}
+
+@keyframes rotate-outer08 {
+  0% {
+    transform-origin: 50% 50%;
   }
 
-
-
-
-
-/* .menuName {
-    position: absolute;
-    bottom: 3px;
-    width: 100%;
-    font-size: 18px;
-    color: #ffffff;
-    font-weight: 700;
-} */
-
-/* ---------- HIỆU ỨNG XÁM (Gray effect) ---------- */
-#menuSection .gray {
-    filter: grayscale(100%) brightness(0.8) contrast(0.8);
-    transform: none !important;
-    box-shadow: none !important;
-    opacity: 0.6;
-    pointer-events: none;
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-/* ---------- Ẩn hoàn toàn ---------- */
-.hidden-card {
-    display: none !important;
+@keyframes rotate-inner08 {
+  0% {
+    stroke-dasharray: 1px, 200px;
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dasharray: 100px, 200px;
+    stroke-dashoffset: -15px;
+  }
+
+  100% {
+    stroke-dasharray: 100px, 200px;
+    stroke-dashoffset: -125px;
+  }
 }
 
+@keyframes color-anim08 {
+  0% {
+    color: #4285f4;
+  }
 
-/*pop up content, noi dung hinh anh khi click vao*/
-.imgpop-content {
-    margin-top: 12px;
-    color: #ffffff;
-    font-size: 30px;
-    font-weight: 700;
-    text-align: center;
-    padding: 8px 16px;
-    background: #d05555;
-    box-shadow: 4px 3px 18px 4px #3a3535e0;
+  25% {
+    color: #ea4335;
+  }
+
+  50% {
+    color: #f9bb2d;
+  }
+
+  75% {
+    color: #34a853;
+  }
 }
-
-
