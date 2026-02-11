@@ -1,6 +1,9 @@
 // js/language_switcher.js
 let translations = {};
-let currentLang = localStorage.getItem('lang') || 'JP';
+let currentLang =
+  localStorage.getItem("lang") ||
+  localStorage.getItem("selectedLang") ||
+  "JP";
 
 // Tải dữ liệu JSON chứa bản dịch
 async function loadTranslations() {
@@ -41,6 +44,7 @@ function applyTranslations(lang) {
   });
 
   localStorage.setItem('lang', lang);
+  localStorage.setItem("selectedLang", lang);
   currentLang = lang;
   console.log(`Language changed to: ${lang}`);
 }
